@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" method to achieve a representation of the Pascal's triangle"""
 
 
 def pascal_triangle(n):
