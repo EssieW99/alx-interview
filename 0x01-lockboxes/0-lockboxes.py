@@ -10,11 +10,16 @@ def canUnlockAll(boxes):
     stack = [0]
 
     while stack:
-        current_box = stack.pop() # pops the last item from the stack assigning it to current_box
-        if current_box not in opened_boxes: # checks if current_box has already been opened
-            opened_boxes.add(current_box) # marks current_box as opened
-            for key in boxes[current_box]: # a key reps another box that can be opened if it matches the index
-                if key < n and key not in opened_boxes: # cheks if key is a valid box index
+        # pops the last item from the stack assigning it to current_box
+        current_box = stack.pop()
+        # checks if current_box has already been opened
+        if current_box not in opened_boxes:
+            # marks current_box as opened
+            opened_boxes.add(current_box)
+            # a key reps another box that can be opened if it matches the index
+            for key in boxes[current_box]:
+                # checks if key is a valid box index
+                if key < n and key not in opened_boxes:
                     stack.append(key)
 
     return len(opened_boxes) == n
