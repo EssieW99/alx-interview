@@ -17,7 +17,7 @@ def validUTF8(data):
             determine how many bytes to process based on leading bits
             """
             if bina_rep.startswith('0'):
-                " 1-byte character"
+                """ 1-byte character"""
                 continue
             elif bina_rep.startswith('110'):
                 bytes_to_process = 1
@@ -29,7 +29,7 @@ def validUTF8(data):
                 return False
 
         else:
-            " check if the byte is a valid continuation byte"
+            """ check if the byte is a valid continuation byte"""
             if not bina_rep.startswith('10'):
                 return False
             bytes_to_process -= 1
